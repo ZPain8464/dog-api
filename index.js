@@ -3,9 +3,11 @@
 function displayResults(responseJson) {
     console.log('displayResults ran');
     console.log(responseJson.message);
+    $('.js-images').empty();
     for (let i = 0; i < responseJson.message.length; i++) {
-    $('.js-images').append(`
-    <li><img src="${responseJson.message[i]}"></li><hr>`);
+        $('.js-images').append(`
+    <li><img src="${responseJson.message[i]}" class="results-img"></li><hr>`);
+    $('.results').removeClass('hidden');
     };
     
 
